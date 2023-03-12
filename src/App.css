@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.loader-ctn .ph-picture {
+  /* width:40px; */
+  height: 30px;
+}
+.loader-ctn td {
+  padding: 5px;
+}
+.loader-ctn .ph-item,
+.loader-ctn .ph-col-12 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.loader-td {
+  padding: 0px !important;
+}
+
+.ph-item {
+  padding: 0px !important;
+  border: 0px !important;
+}
+
+.ph-picture {
+  height: 50px !important;
+}
+
+.loader-item{
+  padding: 10px 10px; 
+  border: 0px; 
+  margin-bottom: 0px;
+}
+
+.btn-wrapper{
+  display: flex;
+  gap: 15px;
+}
