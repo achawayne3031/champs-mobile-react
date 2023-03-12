@@ -9,6 +9,7 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "placeholder-loading/dist/css/placeholder-loading.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const root = ReactDOM.createRoot(

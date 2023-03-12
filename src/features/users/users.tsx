@@ -6,7 +6,7 @@ import { Loader } from '../../components/loader';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import {Modal, Button} from 'react-bootstrap';
-
+import { ToastContainer, toast } from 'react-toastify';
 
   interface postType{
     id: number,
@@ -20,6 +20,10 @@ export function User() {
     const user = useSelector(selectUser);
     let loading = user.loading
     let ourData = user.data.data;
+    let success = user.data.success;
+
+   
+
     const dispatch = useAppDispatch()
 
     const [formData, setFormData] = useState({
@@ -33,7 +37,6 @@ export function User() {
     const handleClose = () => setShow(false);
 
     const handleShow = (data: postType) => {
-
         setShow(true);
         setFormData(
             {
@@ -43,10 +46,6 @@ export function User() {
             }
         )
     } 
-
-    
-    
-
 
     
 
@@ -60,8 +59,8 @@ export function User() {
         event.preventDefault();
         dispatch(updateUser(formData))
         handleClose()
-       
     }
+
 
 
 
@@ -69,10 +68,9 @@ export function User() {
   
     useEffect(() => {
         dispatch(getAllUsers());
-    },[]);
+    },[dispatch]);
 
     const deleteUserData = (user: number) => {
-
         confirmAlert({
             title: 'Confirm to submit',
             message: 'Are you sure to do this.',
