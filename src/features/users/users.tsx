@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getAllUsers, selectUser, deleteUser, updateUser } from './userSlice';
-import { useAppSelector, useAppDispatch } from '../../app/hook'
+import { useAppDispatch } from '../../app/hook'
 import { Loader } from '../../components/loader';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import {Modal, Button} from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
 
   interface postType{
     id: number,
@@ -20,9 +19,6 @@ export function User() {
     const user = useSelector(selectUser);
     let loading = user.loading
     let ourData = user.data.data;
-    let success = user.data.success;
-
-   
 
     const dispatch = useAppDispatch()
 

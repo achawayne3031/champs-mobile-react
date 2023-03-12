@@ -1,14 +1,11 @@
-import { Action, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import {
   getRequest,
   postRequest,
   deleteRequest,
-  updateRequest,
   displayNotify,
 } from './userApi'
 import { UserData } from './model'
-import { useAppSelector, useAppDispatch } from '../../app/hook'
-import { notifyMsg } from '../notify/notifySlice'
 
 interface UserState {
   user: {

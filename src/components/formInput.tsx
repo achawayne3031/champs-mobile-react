@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAppSelector, useAppDispatch } from '../app/hook'
+import {  useAppDispatch } from '../app/hook'
 import { useSelector } from 'react-redux';
 import { getAllUsers, AddNewUser, selectUser } from './../features/users/userSlice';
 
@@ -18,13 +18,10 @@ export function FormInput () {
 
 
     let loading = user.loading
-    let ourData = user.data.data;
     let saveState = user.saveState
 
     if(saveState === true){
-      
         dispatch(getAllUsers())
-
     }
 
  

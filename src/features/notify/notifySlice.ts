@@ -1,4 +1,4 @@
-import { Action, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { displayNotify } from './notifySend'
 
 interface NotifyState {
