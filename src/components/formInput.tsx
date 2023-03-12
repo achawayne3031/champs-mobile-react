@@ -22,7 +22,9 @@ export function FormInput () {
     let saveState = user.saveState
 
     if(saveState === true){
+      
         dispatch(getAllUsers())
+
     }
 
  
@@ -33,13 +35,15 @@ export function FormInput () {
         setFormData(values => ({...values, [name]: value}))
     }
 
-    const handleSubmit = (event: React.SyntheticEvent) => {
+    const handleSubmit = async (event: React.SyntheticEvent) => {
         event.preventDefault();
         dispatch(AddNewUser(formData))
         setFormData({
             name: "",
             email: "",
         })
+
+       
     }
 
 
@@ -57,6 +61,7 @@ export function FormInput () {
                                         type="text" 
                                         className="form-control"
                                         name="name"
+                                        required
                                         value={formData.name}
                                         onChange={handleChange}
                                         placeholder="Enter name"
@@ -69,6 +74,7 @@ export function FormInput () {
                                         type="text" 
                                         className="form-control"
                                         name="email"
+                                        required
                                         value={formData.email}
                                         onChange={handleChange}
                                         placeholder="Enter email"

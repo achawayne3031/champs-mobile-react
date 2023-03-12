@@ -49,7 +49,7 @@ export function User() {
 
     
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const name = event.target.name;
         const value = event.target.value;
         setFormData(values => ({...values, [name]: value}))
@@ -156,6 +156,7 @@ export function User() {
                                         type="text" 
                                         className="form-control"
                                         name="name"
+                                        required
                                         value={formData.name}
                                         onChange={handleChange}
                                         placeholder="Enter name"
@@ -168,6 +169,7 @@ export function User() {
                                         type="text" 
                                         className="form-control"
                                         name="email"
+                                        required
                                         value={formData.email}
                                         onChange={handleChange}
                                         placeholder="Enter email"

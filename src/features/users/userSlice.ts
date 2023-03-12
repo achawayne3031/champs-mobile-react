@@ -51,7 +51,7 @@ export const AddNewUser = createAsyncThunk(
   'users/addNewUser',
   async (data: UserData) => {
     const response = await postRequest('/create', data)
-    if (response.status == 200) {
+    if (response != null) {
       displayNotify(`${response.data.message}`, response.data.success)
     }
     return response.data
@@ -62,7 +62,7 @@ export const deleteUser = createAsyncThunk(
   'users/deleteUser',
   async (user: number) => {
     const response = await deleteRequest(`/users/${user}`)
-    if (response.status == 200) {
+    if (response.status) {
       displayNotify(`${response.data.message}`, response.data.success)
     }
     return response.data
@@ -73,7 +73,8 @@ export const updateUser = createAsyncThunk(
   'users/updateUser',
   async (data: UserData) => {
     const response = await postRequest(`/users/${data.id}`, data)
-    if (response.status == 200) {
+
+    if (response != null) {
       displayNotify(`${response.data.message}`, response.data.success)
     }
     return response.data
