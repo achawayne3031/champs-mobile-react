@@ -1,5 +1,8 @@
 In the project directory, you can run:
 
+## `npm install`
+this command will install all the packages needed for the project
+
 ### `npm start`
 
 Runs the app in the development mode.\
